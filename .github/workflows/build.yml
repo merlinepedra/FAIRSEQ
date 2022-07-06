@@ -47,7 +47,7 @@ jobs:
       if: matrix.platform == 'macos-latest'
       run: |
         brew install llvm
-        MACOSX_DEPLOYMENT_TARGET=10.15 CC=clang CXX=clang++ pip install git+https://github.com/facebookresearch/xformers.git@v0.0.8
+        MACOSX_DEPLOYMENT_TARGET=10.9 CC=/opt/homebrew/opt/llvm/bin/clang CXX=/opt/homebrew/opt/llvm/bin/clang++ pip install git+https://github.com/facebookresearch/xformers.git@v0.0.8
 
     - name: Install xformers for non-MacOS
       if: matrix.platform != 'macos-latest'
